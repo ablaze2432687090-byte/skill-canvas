@@ -1,0 +1,22 @@
+node_modules/
+dist/
+test-results/
+playwright-report/
+*.tsbuildinfo
+.tmp/
+.skill-canvas/
+work/
+Skill Canvas Data/
+release/
+desktop-dist/
+output/
+.env
+.env.*
+*.log
+*.pem
+*.pfx
+*.p12
+auth.json
+.DS_Store
+Thumbs.db
+desktop/licenses/Chromium-NOTICES.html

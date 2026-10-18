@@ -1,0 +1,35 @@
+appId: local.skillcanvas.desktop
+productName: Skill Canvas
+directories:
+  output: release
+files:
+  - dist/**
+  - desktop/**
+  - desktop-dist/**
+  - package.json
+asar: true
+electronDist: node_modules/electron/dist
+asarUnpack:
+  - desktop-dist/**
+npmRebuild: false
+win:
+  target: nsis
+  artifactName: Skill-Canvas-${version}-Setup.${ext}
+  icon: desktop-dist/icon.ico
+  signAndEditExecutable: true
+  verifyUpdateCodeSignature: true
+nsis:
+  unicode: true
+  installerLanguages:
+    - zh_CN
+    - en_US
+  displayLanguageSelector: true
+  include: desktop/installer-language.nsh
+  oneClick: false
+  perMachine: false
+  allowElevation: false
+  allowToChangeInstallationDirectory: true
+  deleteAppDataOnUninstall: false
+  runAfterFinish: false
+  createDesktopShortcut: true
+  createStartMenuShortcut: true

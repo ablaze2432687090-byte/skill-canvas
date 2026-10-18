@@ -1,0 +1,10 @@
+import { t } from '../application/i18n';
+import {useState} from 'react';
+import {Sun,Moon,Monitor,Gem} from 'lucide-react';
+import {useCanvas} from '../application/CanvasProvider';
+import {applyTheme,type Theme} from '../application/theme';
+export function AppearanceSettings(){
+ const {settings,updateSettings}=useCanvas();const [busy,setBusy]=useState(false),[error,setError]=useState('');
+ const select=async(theme:Theme)=>{if(busy||settings.theme===theme)return;setBusy(true);setError('');try{await window.skillCanvasDesktop?.setTheme(theme);applyTheme(theme);updateSettings({theme});}catch(e){setError(e instanceof Error?e.message:'外观保存失败，请重试。');}finally{setBusy(false);}};
+ return <section className="settings-section appearance-settings" aria-labelledby="appearance-title"><div className="section-heading"><div><h2 id="appearance-title">{t("外观")}</h2><p>{t("切换全界面主题，自动记住你的选择。图片保持原色。")}</p></div><div className="theme-options appearance-mode-options" role="group" aria-label={t("界面模式")}><button type="button" disabled={busy} aria-pressed={settings.theme==='light'} onClick={()=>void select('light')}><Sun size={18} aria-hidden="true"/>{t("常规")}</button><button type="button" disabled={busy} aria-pressed={settings.theme==='dark'} onClick={()=>void select('dark')}><Moon size={18} aria-hidden="true"/>{t("夜间")}</button><button type="button" disabled={busy} aria-pressed={settings.theme==='gold'} onClick={()=>void select('gold')}><Gem size={18} aria-hidden="true"/>{t('黑金')}</button><button type="button" disabled={busy} aria-pressed={settings.theme==='system'} onClick={()=>void select('system')}><Monitor size={18} aria-hidden="true"/>{t('系统')}</button></div></div><div className="setting-row"><label htmlFor="text-scale">{t('文字大小')}</label><select id="text-scale" value={settings.textScale||100} onChange={e=>updateSettings({textScale:Number(e.target.value)})}>{[90,100,110,125].map(value=><option key={value} value={value}>{value}%</option>)}</select></div>{t(error)&&<p role="alert" className="field-error">{t(error)}</p>}</section>;
+}
