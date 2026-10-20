@@ -26,7 +26,7 @@ The installer is **unsigned**. Windows may show an unknown-publisher warning. Ve
 2. Install a compatible Codex CLI and sign into it with your own ChatGPT account. Image generation availability and limits depend on your account, Codex version and tools.
 3. Run the installer. It supports Chinese and English and installs for the current user. You do not need a separate Node.js, pnpm or development environment to run the packaged app.
 4. Follow **Getting started** in Settings. Checking the environment does not automatically generate an image. The image capability test is explicit and consumes account usage.
-5. Add your own Skill in **Skill Manager**. This distribution contains no author's projects, installed third-party Skill library, generated covers or cases. An imagegen capability discovered in your own Codex installation is not a bundled Skill.
+5. Add trusted Skills in **Skill Manager**.
 
 For the complete workflow and troubleshooting, see the [User guide](docs/USER_GUIDE.en.md).
 
@@ -34,7 +34,7 @@ For the complete workflow and troubleshooting, see the [User guide](docs/USER_GU
 
 Projects and settings stay on your computer, separate from the installation. **Generation is not offline**: selected prompts and reference images are sent to Codex and its image tools. There is no OpenAI image API Key field or fallback to a separately billed image API in this app.
 
-Skills can contain instructions, scripts or external dependencies. Importing a Skill is not a security endorsement, and not every online Skill is compatible. Review its source and license. No private projects, credentials or account sessions are bundled.
+Skills can contain instructions, scripts or external dependencies. Importing a Skill is not a security endorsement, and not every online Skill is compatible. Review its source and license.
 
 Application updates are **manual** for this preview: back up, close the app, download a newer installer from Releases and install over the existing location. Skill updates are separate. See [Updating](docs/USER_GUIDE.en.md#updating).
 

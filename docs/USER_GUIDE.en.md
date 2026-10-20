@@ -19,8 +19,6 @@
 4. Personal names, descriptions, categories, tags, groups and showcase images can be managed without rewriting the original Skill instructions.
 5. Optional cover/case generation consumes account usage. Compatible single-image Skills request one cover and one case; mandatory image inputs and grouped-output Skills follow their actual capabilities.
 
-The public distribution includes no author's projects or installed third-party Skill collection. Add your own content.
-
 ## Create and revise
 
 1. Choose a Skill in the library, open its details, and select **Use this Skill**.
@@ -55,7 +53,7 @@ Backups may contain private prompts, images and Skills. Never upload them to a p
 4. Install over the existing application location without deleting the independent data directory.
 5. Reopen and check the version, projects, Skills and preferences.
 
-Application updates do not download/install automatically. No stable 1.0 will be published without the author's approval. Open the Releases list directly rather than relying on GitHub's latest-release redirect for previews.
+Application updates do not download/install automatically. Open the Releases list directly rather than relying on GitHub's latest-release redirect for previews.
 
 ## Troubleshooting
 

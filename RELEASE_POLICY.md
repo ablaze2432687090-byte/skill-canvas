@@ -1,8 +1,9 @@
-# Release version policy
+# Releases and data compatibility
 
-The author reset the testing numbering at 0.61. The current testing version is **0.62.0**.
-All subsequent versions must remain below 1.0.0 and be described as test builds until the author explicitly approves 1.0.
-Older 1.x local build labels are historical numbering, not evidence of author-approved stable releases.
-Do not reset, replace, or downgrade user-data schema versions to match the application version.
-Do not delete projects, Skills, images, or backups when changing the application version.
-Unsigned testing builds retain manual installation/update behavior.
+Current version: **0.62.0 public preview**.
+
+- Preview builds are published as GitHub Pre-releases.
+- Application versions and user-data schema versions are independent.
+- Updates retain projects, Skills, images and backups. Back up your data before upgrading.
+- Unsigned installers include a matching SHA256 checksum.
+- Application updates are downloaded and installed manually; Skill updates are managed separately.
